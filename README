@@ -1,0 +1,7 @@
+Scripts to monitoring a Hadoop Cluster with Collectd
+
+  https://collectd.org/
+
+One Cluster Server is configured as master and a Hadoop Cluster
+with any workers is being monitored.
+
