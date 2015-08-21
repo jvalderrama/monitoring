@@ -60,7 +60,7 @@ do
     echo "PUTVAL $HOSTNAME/$NODE_NAME-AppsSubmitted/memory interval=$INTERVAL $TIME:$AppsSubmitted"
     echo "PUTVAL $HOSTNAME/$NODE_NAME-AppsRunning/memory interval=$INTERVAL $TIME:$AppsRunning"
     echo "PUTVAL $HOSTNAME/$NODE_NAME-AppsPending/memory interval=$INTERVAL $TIME:$AppsPending"
-    echo "PUTVAL $HOSTNAME/$NODE_NAME-AppsCompleted/memory interval=$INTERVAL $TIME:$AppsPending"
+    echo "PUTVAL $HOSTNAME/$NODE_NAME-AppsCompleted/memory interval=$INTERVAL $TIME:$AppsCompleted"
     echo "PUTVAL $HOSTNAME/$NODE_NAME-AppsFailed/memory interval=$INTERVAL $TIME:$AppsFailed"
     echo "PUTVAL $HOSTNAME/$NODE_NAME-AppsKilled/memory interval=$INTERVAL $TIME:$AppsKilled"
     echo "PUTVAL $HOSTNAME/$NODE_NAME-AllocatedMB/memory interval=$INTERVAL $TIME:$AllocatedMB"
