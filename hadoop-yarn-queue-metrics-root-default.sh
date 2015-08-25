@@ -79,7 +79,6 @@ do
     echo "PUTVAL $HOSTNAME/$NODE_NAME-ActiveUsers/memory interval=$INTERVAL $TIME:$ActiveUsers"
     echo "PUTVAL $HOSTNAME/$NODE_NAME-ActiveApplications/memory interval=$INTERVAL $TIME:$ActiveApplications"
 
-    export INTERVAL=$INTERVAL
     export APPS_SUBMITTED=$AppsSubmitted
     export APPS_RUNNING=$AppsRunning
     export APPS_PENDING=$AppsPending
