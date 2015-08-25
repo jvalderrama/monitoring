@@ -85,7 +85,7 @@ do
     export APPS_PENDING=$AppsPending
     export APPS_COMPLETED=$AppsCompleted
 
-    /usr/bin/env ruby <<-EORUBY
+/usr/bin/env ruby <<-EORUBY
 
       r_AppsSubmitted=ENV['APPS_SUBMITTED']
       r_AppsRunning=ENV['APPS_RUNNING']
@@ -94,6 +94,6 @@ do
       #puts "ruby /etc/collectd/scalingd \"#{r_AppsSubmitted} #{r_AppsRunning} #{r_AppsPending} #{r_AppsCompleted}\""
       system("ruby /etc/collectd/scalingd #{r_AppsSubmitted} #{r_AppsRunning} #{r_AppsPending} #{r_AppsCompleted}")
 
-    EORUBY
+EORUBY
 
 done
