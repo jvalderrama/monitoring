@@ -91,8 +91,8 @@ do
       r_AppsRunning=ENV['APPS_RUNNING']
       r_AppsPending=ENV['APPS_PENDING']
       r_AppsCompleted=ENV['APPS_COMPLETED']
-      #puts "ruby /etc/collectd/ \"#{r_AppsSubmitted} #{r_AppsRunning} #{r_AppsPending} #{r_AppsCompleted}\""
-      system("ruby /etc/collectd/ #{r_AppsSubmitted} #{r_AppsRunning} #{r_AppsPending} #{r_AppsCompleted}")
+      #puts "ruby /etc/collectd/scalingd \"#{r_AppsSubmitted} #{r_AppsRunning} #{r_AppsPending} #{r_AppsCompleted}\""
+      system("ruby /etc/collectd/scalingd #{r_AppsSubmitted} #{r_AppsRunning} #{r_AppsPending} #{r_AppsCompleted}")
 
     EORUBY
 
