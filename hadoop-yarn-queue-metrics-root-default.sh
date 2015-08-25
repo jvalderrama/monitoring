@@ -79,4 +79,21 @@ do
     echo "PUTVAL $HOSTNAME/$NODE_NAME-ActiveUsers/memory interval=$INTERVAL $TIME:$ActiveUsers"
     echo "PUTVAL $HOSTNAME/$NODE_NAME-ActiveApplications/memory interval=$INTERVAL $TIME:$ActiveApplications"
 
+    export INTERVAL=$INTERVAL
+    export APPS_SUBMITTED=$AppsSubmitted
+    export APPS_RUNNING=$AppsRunning
+    export APPS_PENDING=$AppsPending
+    export APPS_COMPLETED=$AppsCompleted
+
+    /usr/bin/env ruby <<-EORUBY
+
+      r_AppsSubmitted=ENV['APPS_SUBMITTED']
+      r_AppsRunning=ENV['APPS_RUNNING']
+      r_AppsPending=ENV['APPS_PENDING']
+      r_AppsCompleted=ENV['APPS_COMPLETED']
+      #puts "ruby /etc/collectd/ \"#{r_AppsSubmitted} #{r_AppsRunning} #{r_AppsPending} #{r_AppsCompleted}\""
+      system("ruby /etc/collectd/ #{r_AppsSubmitted} #{r_AppsRunning} #{r_AppsPending} #{r_AppsCompleted}")
+
+    EORUBY
+
 done
