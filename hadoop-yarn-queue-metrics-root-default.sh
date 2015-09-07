@@ -1,5 +1,5 @@
 # -------------------------------------------------------------------------- #
-# Copyright 2015, Atos Spain SA                                              #
+# Copyright 2015, Atos Spain SA                                              
 #                                                                            #
 # Licensed under the Apache License, Version 2.0 (the "License"); you may    #
 # not use this file except in compliance with the License. You may obtain    #
@@ -25,54 +25,38 @@ NODE_NAME="YarnQueueMetricsRootDefault"
 while sleep "$INTERVAL"
 do
 
-    LINE=`tail -n 100 $HADOOP_METRICS_FILE | grep "yarn.QueueMetrics: Queue=root.default" | tail -n 1`
+    LINE=`tail -n 100 $HADOOP_METRICS_FILE | grep "yarn.QueueMetrics: Queue=root" | tail -n 1`
     TIME=`echo $LINE | cut -d" " -f 1`
-    running_0=`echo $LINE | awk '{ print $6 }' | cut -d"=" -f 2 | cut -d"," -f 1`
-    running_60=`echo $LINE | awk '{ print $7 }' | cut -d"=" -f 2 | cut -d"," -f 1`
-    running_300=`echo $LINE | awk '{ print $8 }' | cut -d"=" -f 2 | cut -d"," -f 1`
-    running_1440=`echo $LINE | awk '{ print $9}' | cut -d"=" -f 2 | cut -d"," -f 1`
-    FairShareMB=`echo $LINE | awk '{ print $10}' | cut -d"=" -f 2 | cut -d"," -f 1`
-    FairShareVCores=`echo $LINE | awk '{ print $11}' | cut -d"=" -f 2 | cut -d"," -f 1`
-    SteadyFairShareMB=`echo $LINE | awk '{ print $12}' | cut -d"=" -f 2 | cut -d"," -f 1`
-    SteadyFairShareVCores=`echo $LINE | awk '{ print $13}' | cut -d"=" -f 2 | cut -d"," -f 1`
-    MinShareMB=`echo $LINE | awk '{ print $14}' | cut -d"=" -f 2 | cut -d"," -f 1`
-    MinShareVCores=`echo $LINE | awk '{ print $15}' | cut -d"=" -f 2 | cut -d"," -f 1`
-    MaxShareMB=`echo $LINE | awk '{ print $16}' | cut -d"=" -f 2 | cut -d"," -f 1`
-    MaxShareVCores=`echo $LINE | awk '{ print $17}' | cut -d"=" -f 2 | cut -d"," -f 1`
-    AppsSubmitted=`echo $LINE | awk '{ print $18}' | cut -d"=" -f 2 | cut -d"," -f 1`
-    AppsRunning=`echo $LINE | awk '{ print $19}' | cut -d"=" -f 2 | cut -d"," -f 1`
-    AppsPending=`echo $LINE | awk '{ print $20}' | cut -d"=" -f 2 | cut -d"," -f 1`
-    AppsCompleted=`echo $LINE | awk '{ print $21}' | cut -d"=" -f 2 | cut -d"," -f 1`
-    AppsKilled=`echo $LINE | awk '{ print $22}' | cut -d"=" -f 2 | cut -d"," -f 1`
-    AppsFailed=`echo $LINE | awk '{ print $23}' | cut -d"=" -f 2 | cut -d"," -f 1`
-    AllocatedMB=`echo $LINE | awk '{ print $24}' | cut -d"=" -f 2 | cut -d"," -f 1`
-    AllocatedVCores=`echo $LINE | awk '{ print $25}' | cut -d"=" -f 2 | cut -d"," -f 1`
-    AllocatedContainers=`echo $LINE | awk '{ print $26}' | cut -d"=" -f 2 | cut -d"," -f 1`
-    AggregateContainersAllocated=`echo $LINE | awk '{ print $27}' | cut -d"=" -f 2 | cut -d"," -f 1`
-    AggregateContainersReleased=`echo $LINE | awk '{ print $28}' | cut -d"=" -f 2 | cut -d"," -f 1`
-    AvailableMB=`echo $LINE | awk '{ print $29}' | cut -d"=" -f 2 | cut -d"," -f 1`
-    AvailableVCores=`echo $LINE | awk '{ print $30}' | cut -d"=" -f 2 | cut -d"," -f 1`
-    PendingMB=`echo $LINE | awk '{ print $31}' | cut -d"=" -f 2 | cut -d"," -f 1`
-    PendingVCores=`echo $LINE | awk '{ print $32}' | cut -d"=" -f 2 | cut -d"," -f 1`
-    PendingContainers=`echo $LINE | awk '{ print $33}' | cut -d"=" -f 2 | cut -d"," -f 1`
-    ReservedMB=`echo $LINE | awk '{ print $34}' | cut -d"=" -f 2 | cut -d"," -f 1`
-    ReservedVCores=`echo $LINE | awk '{ print $35}' | cut -d"=" -f 2 | cut -d"," -f 1`
-    ReservedContainers=`echo $LINE | awk '{ print $36}' | cut -d"=" -f 2 | cut -d"," -f 1`
-    ActiveUsers=`echo $LINE | awk '{ print $37}' | cut -d"=" -f 2 | cut -d"," -f 1`
-    ActiveApplications=`echo $LINE | awk '{ print $30}' | cut -d"=" -f 2 | cut -d"," -f 1`
+    running_0=`echo $LINE | awk '{ print $7 }' | cut -d"=" -f 2 | cut -d"," -f 1`
+    running_60=`echo $LINE | awk '{ print $8 }' | cut -d"=" -f 2 | cut -d"," -f 1`
+    running_300=`echo $LINE | awk '{ print $9 }' | cut -d"=" -f 2 | cut -d"," -f 1`
+    running_1440=`echo $LINE | awk '{ print $10}' | cut -d"=" -f 2 | cut -d"," -f 1`
+    AppsSubmitted=`echo $LINE | awk '{ print $11}' | cut -d"=" -f 2 | cut -d"," -f 1`
+    AppsRunning=`echo $LINE | awk '{ print $12}' | cut -d"=" -f 2 | cut -d"," -f 1`
+    AppsPending=`echo $LINE | awk '{ print $13}' | cut -d"=" -f 2 | cut -d"," -f 1`
+    AppsCompleted=`echo $LINE | awk '{ print $14}' | cut -d"=" -f 2 | cut -d"," -f 1`
+    AppsKilled=`echo $LINE | awk '{ print $15}' | cut -d"=" -f 2 | cut -d"," -f 1`
+    AppsFailed=`echo $LINE | awk '{ print $16}' | cut -d"=" -f 2 | cut -d"," -f 1`
+    AllocatedMB=`echo $LINE | awk '{ print $17}' | cut -d"=" -f 2 | cut -d"," -f 1`
+    AllocatedVCores=`echo $LINE | awk '{ print $18}' | cut -d"=" -f 2 | cut -d"," -f 1`
+    AllocatedContainers=`echo $LINE | awk '{ print $19}' | cut -d"=" -f 2 | cut -d"," -f 1`
+    AggregateContainersAllocated=`echo $LINE | awk '{ print $20}' | cut -d"=" -f 2 | cut -d"," -f 1`
+    AggregateContainersReleased=`echo $LINE | awk '{ print $21}' | cut -d"=" -f 2 | cut -d"," -f 1`
+    AvailableMB=`echo $LINE | awk '{ print $22}' | cut -d"=" -f 2 | cut -d"," -f 1`
+    AvailableVCores=`echo $LINE | awk '{ print $23}' | cut -d"=" -f 2 | cut -d"," -f 1`
+    PendingMB=`echo $LINE | awk '{ print $24}' | cut -d"=" -f 2 | cut -d"," -f 1`
+    PendingVCores=`echo $LINE | awk '{ print $25}' | cut -d"=" -f 2 | cut -d"," -f 1`
+    PendingContainers=`echo $LINE | awk '{ print $26}' | cut -d"=" -f 2 | cut -d"," -f 1`
+    ReservedMB=`echo $LINE | awk '{ print $27}' | cut -d"=" -f 2 | cut -d"," -f 1`
+    ReservedVCores=`echo $LINE | awk '{ print $28}' | cut -d"=" -f 2 | cut -d"," -f 1`
+    ReservedContainers=`echo $LINE | awk '{ print $29}' | cut -d"=" -f 2 | cut -d"," -f 1`
+    ActiveUsers=`echo $LINE | awk '{ print $30}' | cut -d"=" -f 2 | cut -d"," -f 1`
+    ActiveApplications=`echo $LINE | awk '{ print $31}' | cut -d"=" -f 2 | cut -d"," -f 1`
 
     echo "PUTVAL $HOSTNAME/$NODE_NAME-running_0/memory interval=$INTERVAL $TIME:$running_0"
     echo "PUTVAL $HOSTNAME/$NODE_NAME-running_60/memory interval=$INTERVAL $TIME:$running_60"
     echo "PUTVAL $HOSTNAME/$NODE_NAME-running_300/memory interval=$INTERVAL $TIME:$running_300"
     echo "PUTVAL $HOSTNAME/$NODE_NAME-running_1440/memory interval=$INTERVAL $TIME:$running_1440"
-    echo "PUTVAL $HOSTNAME/$NODE_NAME-FairShareMB/memory interval=$INTERVAL $TIME:$FairShareMB"
-    echo "PUTVAL $HOSTNAME/$NODE_NAME-FairShareVCores/memory interval=$INTERVAL $TIME:$FairShareVCores"
-    echo "PUTVAL $HOSTNAME/$NODE_NAME-SteadyFairShareMB/memory interval=$INTERVAL $TIME:$SteadyFairShareMB"
-    echo "PUTVAL $HOSTNAME/$NODE_NAME-SteadyFairShareVCores/memory interval=$INTERVAL $TIME:$SteadyFairShareVCores"
-    echo "PUTVAL $HOSTNAME/$NODE_NAME-MinShareMB/memory interval=$INTERVAL $TIME:$MinShareMB"
-    echo "PUTVAL $HOSTNAME/$NODE_NAME-MinShareVCores/memory interval=$INTERVAL $TIME:$MinShareVCores"
-    echo "PUTVAL $HOSTNAME/$NODE_NAME-MaxShareMB/memory interval=$INTERVAL $TIME:$MaxShareMB"
-    echo "PUTVAL $HOSTNAME/$NODE_NAME-MaxShareVCores/memory interval=$INTERVAL $TIME:$MaxShareVCores"
     echo "PUTVAL $HOSTNAME/$NODE_NAME-AppsSubmitted/memory interval=$INTERVAL $TIME:$AppsSubmitted"
     echo "PUTVAL $HOSTNAME/$NODE_NAME-AppsRunning/memory interval=$INTERVAL $TIME:$AppsRunning"
     echo "PUTVAL $HOSTNAME/$NODE_NAME-AppsPending/memory interval=$INTERVAL $TIME:$AppsPending"
@@ -101,14 +85,12 @@ do
     export APPS_COMPLETED=$AppsCompleted
 
 /usr/bin/env ruby <<-EORUBY
-
       r_AppsSubmitted=ENV['APPS_SUBMITTED']
       r_AppsRunning=ENV['APPS_RUNNING']
       r_AppsPending=ENV['APPS_PENDING']
       r_AppsCompleted=ENV['APPS_COMPLETED']
       #puts "ruby /etc/collectd/scalingd \"#{r_AppsSubmitted} #{r_AppsRunning} #{r_AppsPending} #{r_AppsCompleted}\""
       system("ruby /etc/collectd/scalingd #{r_AppsSubmitted} #{r_AppsRunning} #{r_AppsPending} #{r_AppsCompleted}")
-
 EORUBY
 
 done
