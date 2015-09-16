@@ -87,7 +87,7 @@
         <!--  <property>
           <name>yarn.nodemanager.vmem-pmem-ratio</name>
           <value>2.1</value>
-        </property> -->
+        </property>
         <property>
           <name>yarn.app.mapreduce.am.resource.mb</name>
           <value>13653</value>
@@ -95,5 +95,5 @@
         <property>
           <name>yarn.app.mapreduce.am.command-opts</name>
           <value>10923</value>
-        </property>
+        </property> -->
 </configuration>
