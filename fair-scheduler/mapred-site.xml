@@ -23,18 +23,26 @@
 	</property>
         <property>
           <name>mapreduce.map.memory.mb</name>
-          <value>6827</value>
+          <value>5800</value>
         </property>
         <property>
           <name>mapreduce.reduce.memory.mb</name>
-          <value>13653</value>
+          <value>11601</value>
         </property>
         <property>
           <name>mapreduce.map.java.opts</name>
-          <value>-Xmx5461m</value>
+          <value>-Xmx4640m</value>
         </property>
         <property>
           <name>mapreduce.reduce.java.opts</name>
-          <value>-Xmx10923m</value>
+          <value>-Xmx9281m</value>
         </property>
+        <!-- <property>
+          <name>yarn.app.mapreduce.am.resource.mb</name>
+          <value>11601</value>
+        </property>
+        <property>
+          <name>yarn.app.mapreduce.am.command-opts</name>
+          <value>9281</value>
+        </property> -->
 </configuration>
