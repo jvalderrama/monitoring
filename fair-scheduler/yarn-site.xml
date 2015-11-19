@@ -72,15 +72,15 @@
         </property>
         <property>
           <name>yarn.nodemanager.resource.memory-mb</name>
-          <value>11601</value>
+          <value>9553</value>
         </property>
         <property>
           <name>yarn.scheduler.minimum-allocation-mb</name>
-          <value>5800</value>
+          <value>4776</value>
         </property>
         <property>
           <name>yarn.scheduler.maximum-allocation-mb</name>
-          <value>11601</value>
+          <value>9553</value>
         </property>
         <!--  <property>
           <name>yarn.nodemanager.vmem-pmem-ratio</name>

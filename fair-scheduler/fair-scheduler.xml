@@ -3,8 +3,8 @@
  <queue name="panacea">
    <!-- <minResources>1024 mb,1 vcores</minResources> 
    <maxResources>24576 mb,24 vcores</maxResources> -->
-   <maxRunningApps>20</maxRunningApps>  
-   <schedulingPolicy>fifo</schedulingPolicy> 
+   <schedulingPolicy>fifo</schedulingPolicy>
+   <maxRunningApps>10</maxRunningApps>  
  </queue>
 
   <queuePlacementPolicy>
