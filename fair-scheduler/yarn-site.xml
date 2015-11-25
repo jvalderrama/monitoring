@@ -72,18 +72,26 @@
         </property>
         <property>
           <name>yarn.nodemanager.resource.memory-mb</name>
-          <value>9553</value>
+          <value>7505</value>
         </property>
         <property>
           <name>yarn.scheduler.minimum-allocation-mb</name>
-          <value>4776</value>
+          <value>3752</value>
         </property>
         <property>
           <name>yarn.scheduler.maximum-allocation-mb</name>
-          <value>9553</value>
+          <value>7505</value>
         </property>
         <!--  <property>
           <name>yarn.nodemanager.vmem-pmem-ratio</name>
           <value>2.1</value>
         </property> -->
+        <!--<property>
+          <name>yarn.app.mapreduce.am.resource.mb</name>
+          <value>7505</value>
+        </property>
+        <property>
+          <name>yarn.app.mapreduce.am.command-opts</name>
+          <value>6004</value>
+        </property>-->
 </configuration>
